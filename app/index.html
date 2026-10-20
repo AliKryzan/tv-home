@@ -5,60 +5,79 @@
 <meta name="viewport" content="width=1920,height=1080">
 <title>شاشتي</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-<div id="sky"></div>
-<div id="shade"></div>
+<div id="bg"><div id="scene"></div><div id="photo"></div></div>
+<div id="veil"></div>
 
-<main id="home">
+<div id="page">
   <header class="top">
-    <div class="clockbox">
-      <div id="clock" class="clock">--:--</div>
-      <div id="date" class="date"></div>
-      <div id="hijri" class="date dim"></div>
+    <div class="title">
+      <div id="appTitle" class="appTitle"></div>
+      <div id="appSub" class="appSub"></div>
     </div>
-    <div class="side">
-      <div class="card" id="nextPrayer">
-        <div class="label">الصلاة القادمة</div>
-        <div class="big" id="npName">--</div>
-        <div class="small" id="npIn"></div>
-      </div>
-      <div class="card" id="weather">
-        <div class="label" id="wCity"></div>
-        <div class="big" id="wTemp">--°</div>
-        <div class="small" id="wDesc"></div>
-      </div>
+    <div class="clockbox">
+      <div class="clock"><span id="ampm" class="ampm"></span><span id="clock"></span></div>
+      <div id="date" class="date"></div>
+      <div id="prayerLine" class="prayerLine"></div>
     </div>
   </header>
 
-  <section class="prayers" id="prayers"></section>
+  <nav class="pills">
+    <div class="pill focusable" data-act="settings">إعدادات الشاشة</div>
+    <div class="pill focusable" data-act="reorder" id="reorderPill">ترتيب المفضلة</div>
+    <div class="pill focusable" data-act="saver">شاشة التوقف</div>
+  </nav>
 
-  <section class="row">
-    <h2>المفضلة</h2>
-    <div class="shelf" id="favs"></div>
+  <section class="sec">
+    <h3>المفضلة <span id="favCount"></span></h3>
+    <div class="band"><div class="track" id="favs"></div></div>
   </section>
 
-  <section class="row">
-    <h2>كل التطبيقات <span class="count" id="allCount"></span></h2>
+  <section class="sec">
+    <h3>المداخل <span>3</span></h3>
+    <div class="inputs" id="inputs">
+      <div class="input focusable" data-key="KEY_HDMI1">HDMI 1</div>
+      <div class="input focusable" data-key="KEY_HDMI2">HDMI 2</div>
+      <div class="input focusable" data-key="KEY_HDMI3">HDMI 3</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h3>كل التطبيقات <span id="allCount"></span></h3>
     <div class="grid" id="all"></div>
   </section>
+</div>
 
-  <div id="toast"></div>
-</main>
+<div id="settings" hidden>
+  <div class="panel">
+    <h2>إعدادات الشاشة</h2>
+    <div class="opt focusable" data-opt="digits"><span>شكل الأرقام</span><b></b></div>
+    <div class="opt focusable" data-opt="bg"><span>الخلفية</span><b></b></div>
+    <div class="opt focusable" data-opt="saverMin"><span>شاشة التوقف بعد</span><b></b></div>
+    <div class="opt focusable" data-opt="close"><span>رجوع</span><b></b></div>
+    <p class="tip">في كل التطبيقات: الزر الأخضر يضيف التطبيق للمفضلة أو يشيله.</p>
+  </div>
+</div>
 
 <div id="saver" hidden>
   <div class="s-clock" id="sClock"></div>
   <div class="s-date" id="sDate"></div>
   <div class="s-row">
-    <div><span class="label">الصلاة القادمة</span><b id="sPrayer"></b></div>
-    <div><span class="label" id="sCity"></span><b id="sWeather"></b></div>
+    <div class="s-item"><span class="s-label">الصلاة القادمة</span><b id="sPrayer"></b><span class="s-sub" id="sPrayerIn"></span></div>
+    <div class="s-sep"></div>
+    <div class="s-item"><span class="s-label" id="sCity"></span><b id="sWeather"></b><span class="s-sub" id="sWeatherDesc"></span></div>
   </div>
 </div>
 
-<script src="config.js"></script>
-<script src="prayer.js"></script>
-<script src="main.js"></script>
+<div id="toast"></div>
+
+<script src="config.js?v=3"></script>
+<script src="prayer.js?v=3"></script>
+<script src="scene.js?v=3"></script>
+<script src="brands.js?v=3"></script>
+<script src="main.js?v=3"></script>
 </body>
 </html>
