@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920,height=1080">
+<title>شاشتي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="sky"></div>
+<div id="shade"></div>
+
+<main id="home">
+  <header class="top">
+    <div class="clockbox">
+      <div id="clock" class="clock">--:--</div>
+      <div id="date" class="date"></div>
+      <div id="hijri" class="date dim"></div>
+    </div>
+    <div class="side">
+      <div class="card" id="nextPrayer">
+        <div class="label">الصلاة القادمة</div>
+        <div class="big" id="npName">--</div>
+        <div class="small" id="npIn"></div>
+      </div>
+      <div class="card" id="weather">
+        <div class="label" id="wCity"></div>
+        <div class="big" id="wTemp">--°</div>
+        <div class="small" id="wDesc"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="prayers" id="prayers"></section>
+
+  <section class="row">
+    <h2>المفضلة</h2>
+    <div class="shelf" id="favs"></div>
+  </section>
+
+  <section class="row">
+    <h2>كل التطبيقات <span class="count" id="allCount"></span></h2>
+    <div class="grid" id="all"></div>
+  </section>
+
+  <div id="toast"></div>
+</main>
+
+<div id="saver" hidden>
+  <div class="s-clock" id="sClock"></div>
+  <div class="s-date" id="sDate"></div>
+  <div class="s-row">
+    <div><span class="label">الصلاة القادمة</span><b id="sPrayer"></b></div>
+    <div><span class="label" id="sCity"></span><b id="sWeather"></b></div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="prayer.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
